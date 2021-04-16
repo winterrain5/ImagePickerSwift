@@ -540,6 +540,37 @@
 			};
 			name = Debug;
 		};
+		4BE8B6450164AC9E7898DF67E53F75CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44C1E39E07A6A00B371A7DE3F030F29C /* ImagePickerSwift.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ImagePickerSwift/ImagePickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImagePickerSwift/ImagePickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ImagePickerSwift/ImagePickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = ImagePickerSwift;
+				PRODUCT_NAME = ImagePickerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		7C8017B7B6EDC1183AFA5F3234819AC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9243A8733A2923D91D91FE4D6A8DA386 /* Pods-ImagePickerSwift_Example.release.xcconfig */;
@@ -573,7 +604,7 @@
 			};
 			name = Release;
 		};
-		C7F81C633FBB49672C8A3A15496EA53A /* Release */ = {
+		C6FA5193F59DD2A024EA239ECC931F31 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 873806C98BEDD2F82FBF7BC56A3AC5F8 /* ImagePickerSwift.release.xcconfig */;
 			buildSettings = {
@@ -597,6 +628,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -666,36 +698,6 @@
 			};
 			name = Release;
 		};
-		F50F032947806DD38D4544354BE46E0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44C1E39E07A6A00B371A7DE3F030F29C /* ImagePickerSwift.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ImagePickerSwift/ImagePickerSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImagePickerSwift/ImagePickerSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImagePickerSwift/ImagePickerSwift.modulemap";
-				PRODUCT_MODULE_NAME = ImagePickerSwift;
-				PRODUCT_NAME = ImagePickerSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		FB51F809D19DBEB954486E04A7E4F766 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 329CA9A71AFEB1F7F1B06ED396B9E9B2 /* Pods-ImagePickerSwift_Tests.release.xcconfig */;
@@ -753,8 +755,8 @@
 		3A66D2942030AEAD295DA5C9A11F1B2C /* Build configuration list for PBXNativeTarget "ImagePickerSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F50F032947806DD38D4544354BE46E0A /* Debug */,
-				C7F81C633FBB49672C8A3A15496EA53A /* Release */,
+				4BE8B6450164AC9E7898DF67E53F75CA /* Debug */,
+				C6FA5193F59DD2A024EA239ECC931F31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

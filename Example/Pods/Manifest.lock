@@ -1,5 +1,5 @@
 PODS:
-  - ImagePickerSwift (0.1.0)
+  - ImagePickerSwift (0.1.1)
 
 DEPENDENCIES:
   - ImagePickerSwift (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ImagePickerSwift: 94de54a5376ef0c56104208999a6b9ac6da377da
+  ImagePickerSwift: 80c51e6acec04349f485d5864d28da56b1c36006
 
 PODFILE CHECKSUM: 5e937975ffe292c5f4953e98bc7c16acd9fa47c2
 
