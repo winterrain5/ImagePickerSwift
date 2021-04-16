@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ImagePickerSwift'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of ImagePickerSwift.'
+  s.version          = '0.1.1'
+  s.summary          = 'ImagePickerSwift is a simple & easy-to-use image picker designed to present both camera and photo library options and get the UIImage easily.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+ImagePickerSwift is a basically a wrapper for `UIImagePickerController` that allows to pick image in a easy way. It is designed to present both camera and photo library options and get the UIImage easily.
                        DESC
 
   s.homepage         = 'https://github.com/winterrain5/ImagePickerSwift'
