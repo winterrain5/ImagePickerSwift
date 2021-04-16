@@ -1,0 +1,25 @@
+{
+  "name": "ImagePickerSwift",
+  "version": "0.1.0",
+  "summary": "A short description of ImagePickerSwift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/winterrain5/ImagePickerSwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "winterrain5": "913419042@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/winterrain5/ImagePickerSwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "5.0"
+  },
+  "source_files": "ImagePickerSwift/Classes/**/*"
+}
