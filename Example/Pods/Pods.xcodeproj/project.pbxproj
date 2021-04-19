@@ -40,14 +40,14 @@
 /* Begin PBXFileReference section */
 		071111B7C1E67931A85906AEEF7362D0 /* Pods-ImagePickerSwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ImagePickerSwift_Tests-dummy.m"; sourceTree = "<group>"; };
 		17602E0487FCBDF82F2F729221D23E7B /* Pods-ImagePickerSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ImagePickerSwift_Example-umbrella.h"; sourceTree = "<group>"; };
-		25B86AEF0E7AD55CBDCFB7E075F648BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		25B86AEF0E7AD55CBDCFB7E075F648BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26FA1436791CE79FBC7DD4A473AEE943 /* Pods-ImagePickerSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ImagePickerSwift_Tests.modulemap"; sourceTree = "<group>"; };
-		2797214E86FF44B848C0D0A6A87268E9 /* ImagePickerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImagePickerSwift.framework; path = ImagePickerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2797214E86FF44B848C0D0A6A87268E9 /* ImagePickerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImagePickerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3218A0A971AB6FB2236AB714960F7F90 /* Pods-ImagePickerSwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ImagePickerSwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		329CA9A71AFEB1F7F1B06ED396B9E9B2 /* Pods-ImagePickerSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImagePickerSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		44C1E39E07A6A00B371A7DE3F030F29C /* ImagePickerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImagePickerSwift.debug.xcconfig; sourceTree = "<group>"; };
-		46A0EFC590DE70C965ACB4DD7539B5AA /* ImagePickerSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ImagePickerSwift.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4CB5B0051250FB8DB79CA7ABE1BF08C5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		46A0EFC590DE70C965ACB4DD7539B5AA /* ImagePickerSwift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ImagePickerSwift.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		4CB5B0051250FB8DB79CA7ABE1BF08C5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4F4EE589322D4B4277156A59CA513188 /* ImagePickerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImagePickerSwift-umbrella.h"; sourceTree = "<group>"; };
 		5E00B3A35097F013FF5373168FDBA151 /* ImagePicker+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImagePicker+Helpers.swift"; path = "ImagePickerSwift/Classes/ImagePicker+Helpers.swift"; sourceTree = "<group>"; };
 		601683293A74D130D9AB86DC19B6FDFF /* Pods-ImagePickerSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImagePickerSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,19 +58,19 @@
 		873806C98BEDD2F82FBF7BC56A3AC5F8 /* ImagePickerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImagePickerSwift.release.xcconfig; sourceTree = "<group>"; };
 		9243A8733A2923D91D91FE4D6A8DA386 /* Pods-ImagePickerSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImagePickerSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		931FF123FA61650B8331B508B4502EC0 /* Pods-ImagePickerSwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ImagePickerSwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1E12C577AB01452938A59112087A817 /* ImagePickerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImagePickerSwift.modulemap; sourceTree = "<group>"; };
 		A2EECBF837A08105F75B58C23AFFA248 /* Pods-ImagePickerSwift_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ImagePickerSwift_Tests-Info.plist"; sourceTree = "<group>"; };
 		AD7D26D83DFE29140EBDACF48E925561 /* Pods-ImagePickerSwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ImagePickerSwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B8447B16C317B9ECC50AC139E3ACA5D1 /* Pods-ImagePickerSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ImagePickerSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
-		B8F0EE91E8DA3262E59DD72C2171AD2B /* Pods_ImagePickerSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ImagePickerSwift_Tests.framework; path = "Pods-ImagePickerSwift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F0EE91E8DA3262E59DD72C2171AD2B /* Pods_ImagePickerSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImagePickerSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3768AD943AC9FF87F3C4FDA373ED82 /* Pods-ImagePickerSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ImagePickerSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C5F34C3233930698A18FBE24EE4932F9 /* Pods-ImagePickerSwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ImagePickerSwift_Example-dummy.m"; sourceTree = "<group>"; };
 		D5D49AFE00A66100045FD8BCEA2E506E /* ImagePickerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ImagePickerSwift-Info.plist"; sourceTree = "<group>"; };
 		D8002CC28782FA527A5377950EF064E5 /* Pods-ImagePickerSwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ImagePickerSwift_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E2E7679C11631CD6AE23924ACA65FC90 /* Pods-ImagePickerSwift_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ImagePickerSwift_Example.modulemap"; sourceTree = "<group>"; };
 		E4E836556AAB38E57DFF03E7BF4F6C83 /* Pods-ImagePickerSwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ImagePickerSwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		EA684DD47D77EB38C8F2BB835B2670EE /* Pods_ImagePickerSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ImagePickerSwift_Example.framework; path = "Pods-ImagePickerSwift_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA684DD47D77EB38C8F2BB835B2670EE /* Pods_ImagePickerSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImagePickerSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1815F90B88BBA92ECA9A231F36EBD6 /* ImagePickerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImagePickerSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -691,8 +691,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
