@@ -66,6 +66,8 @@ open class ImagePicker:NSObject{
             return
         }
         
+        self.options = options
+        
         picker.sourceType = .camera
         picker.allowsEditing = options.allowsEditing
         picker.mediaTypes = MediaType.video.MediaTypes
@@ -92,6 +94,8 @@ open class ImagePicker:NSObject{
             showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
             return
         }
+        
+        self.options = options
         
         picker.sourceType = .photoLibrary
         picker.mediaTypes = MediaType.video.MediaTypes
@@ -127,6 +131,8 @@ open class ImagePicker:NSObject{
             return
         }
         
+        self.options = options
+        
         picker.sourceType = .camera
         picker.allowsEditing = options.allowsEditing
         picker.mediaTypes = MediaType.image.MediaTypes
@@ -154,6 +160,8 @@ open class ImagePicker:NSObject{
             return
         }
         
+        self.options = options
+        
         picker.sourceType = .photoLibrary
         picker.allowsEditing = options.allowsEditing
         picker.mediaTypes = MediaType.image.MediaTypes
@@ -178,6 +186,8 @@ open class ImagePicker:NSObject{
             showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
             return
         }
+        
+        self.options = options
         
         picker.sourceType = .photoLibrary
         picker.allowsEditing = options.allowsEditing

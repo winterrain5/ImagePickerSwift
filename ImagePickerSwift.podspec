@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ImagePickerSwift'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'ImagePickerSwift is a simple & easy-to-use image picker designed to present both camera and photo library options and get the UIImage easily.'
 
   s.description      = <<-DESC
