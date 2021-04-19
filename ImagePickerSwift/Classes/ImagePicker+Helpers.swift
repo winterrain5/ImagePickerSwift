@@ -7,7 +7,10 @@
 
 import Foundation
 import UIKit
+
 open class ImagePickerOptions: NSObject {
+    
+    public static var `default` = ImagePickerOptions()
     
     public var allowsEditing = true
     public var rotateCameraImage: CGFloat = 0
@@ -25,10 +28,7 @@ open class ImagePickerOptions: NSObject {
     /// 视频质量
     public var videoQuality: UIImagePickerController.QualityType = .typeMedium
     /// 视频最大时长
-    public var videoMaximumDuration: TimeInterval = 10.0
-    /// 选取图片的模式
-    public var pickType:PickerType = .photo
-
+    public var videoMaximumDuration: TimeInterval = Double.infinity
 }
 
 public enum MediaType: String {
@@ -48,11 +48,6 @@ public enum MediaType: String {
     }
 }
 
-public enum PickerType {
-    case photo
-    case camera
-    case video
-}
 
 extension UIImage {
     

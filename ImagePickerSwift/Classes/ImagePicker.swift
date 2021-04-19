@@ -7,6 +7,8 @@ open class ImagePicker:NSObject{
     
     public static let `default` = ImagePicker()
     
+    public typealias CompleteClosure = ((UIImage?, String?) -> Void)?
+    
     private lazy var picker: UIImagePickerController = {
         let picker = UIImagePickerController()
         picker.modalPresentationStyle = .overCurrentContext
@@ -37,26 +39,113 @@ open class ImagePicker:NSObject{
         return root
     }
 
-
-    open func present(with options:ImagePickerOptions , _ completion: ((UIImage?, String?) -> Void)? = nil) {
+    
+    /// 录制视频
+    /// - Parameters:
+    ///   - options: 配置类
+    ///   - completion: 回调
+    open func recordVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+        /// 是否有访问相机权限
+        let avAuthor: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        if avAuthor == .restricted || avAuthor == .denied {
+            showNoAuthorizationAlert("相机权限未开启,请在设置中启用")
+            return
+        }
         
-        setupImagePicker(options: options)
+        /// 是否有访问相机权限
+        let author: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        if author == .restricted || author == .denied {
+            showNoAuthorizationAlert("相机权限未开启,请在设置中启用")
+            return
+        }
+        
+        /// 是否有访问麦克风权限
+        let microStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .audio)
+        if microStatus == .restricted || microStatus == .denied {
+            showNoAuthorizationAlert("麦克风权限未开启,请在设置中启用")
+            return
+        }
+        
+        picker.sourceType = .camera
+        picker.allowsEditing = options.allowsEditing
+        picker.mediaTypes = MediaType.video.MediaTypes
+        picker.cameraCaptureMode = .video
+        picker.cameraDevice = options.cameraDevice
+        
+        presentController.present(picker, animated: true, completion: nil)
         
         self.getImage = { image, url in
             completion?(image, url)
         }
     }
     
-}
-
-extension ImagePicker {
     
-    private func setupImagePicker(options: ImagePickerOptions) {
-        self.options = options
+    /// 从相册中选择视频
+    /// - Parameters:
+    ///   - options: 配置类
+    ///   - completion: 回调
+    open func selectVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
         
-        let type = options.pickType
-        picker.sourceType = options.sourceType
+        /// 是否有访问相册权限
+        let phAuthor: PHAuthorizationStatus = PHAuthorizationStatus.authorized
+        if phAuthor == .restricted || phAuthor == .denied {
+            showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
+            return
+        }
+        
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = MediaType.video.MediaTypes
         picker.allowsEditing = options.allowsEditing
+        picker.videoMaximumDuration = options.videoMaximumDuration
+        picker.videoQuality = options.videoQuality
+        
+        presentController.present(picker, animated: true, completion: nil)
+        
+        self.getImage = { image, url in
+            completion?(image, url)
+        }
+    }
+    
+    
+    /// 拍照
+    /// - Parameters:
+    ///   - options: 配置类
+    ///   - completion: 回调
+    open func takePhoto(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+        
+        /// 是否有访问相机权限
+        let avAuthor: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        if avAuthor == .restricted || avAuthor == .denied {
+            showNoAuthorizationAlert("相机权限未开启,请在设置中启用")
+            return
+        }
+        
+        /// 是否有访问相册权限
+        let phAuthor: PHAuthorizationStatus = PHAuthorizationStatus.authorized
+        if phAuthor == .restricted || phAuthor == .denied {
+            showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
+            return
+        }
+        
+        picker.sourceType = .camera
+        picker.allowsEditing = options.allowsEditing
+        picker.mediaTypes = MediaType.image.MediaTypes
+        picker.cameraCaptureMode = .photo
+        picker.cameraDevice = options.cameraDevice
+        
+        presentController.present(picker, animated: true, completion: nil)
+        
+        self.getImage = { image, url in
+            completion?(image, url)
+        }
+    }
+    
+    
+    /// 从相册选择图片
+    /// - Parameters:
+    ///   - options: 配置类
+    ///   - completion: 回调
+    open func selectPhoto(with options:ImagePickerOptions, _ completion: CompleteClosure) {
         
         /// 是否有访问相册权限
         let author: PHAuthorizationStatus = PHAuthorizationStatus.authorized
@@ -65,51 +154,44 @@ extension ImagePicker {
             return
         }
         
-        if type == .photo {
-            
-            picker.mediaTypes = options.mediaTypes.MediaTypes
-            
-        } else if type == .camera {
-            assert(options.sourceType == .camera, "sourceType 必须指定为camera")
-            
-            /// 是否有访问相机权限
-            let author: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
-            if author == .restricted || author == .denied {
-                showNoAuthorizationAlert("相机权限未开启,请在设置中启用")
-                return
-            }
-            
-            picker.mediaTypes = options.mediaTypes.MediaTypes
-            picker.cameraCaptureMode = .photo
-            
-            
-        } else if type == .video {
-            assert(options.sourceType == .camera, "sourceType 必须指定为camera")
-            
-            /// 是否有访问相机权限
-            let author: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
-            if author == .restricted || author == .denied {
-                showNoAuthorizationAlert("相机权限未开启,请在设置中启用")
-                return
-            }
-           
-            /// 是否有访问麦克风权限
-            let microStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .audio)
-            if microStatus == .restricted || microStatus == .denied {
-                showNoAuthorizationAlert("麦克风权限未开启,请在设置中启用")
-                return
-            }
-            
-            picker.mediaTypes = [MediaType.video.rawValue]
-            picker.cameraCaptureMode = .video
-            picker.cameraDevice = options.cameraDevice
-            picker.videoMaximumDuration = options.videoMaximumDuration
-            picker.videoQuality = options.videoQuality
-           
-        }
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = options.allowsEditing
+        picker.mediaTypes = MediaType.image.MediaTypes
         
         presentController.present(picker, animated: true, completion: nil)
+        
+        self.getImage = { image, url in
+            completion?(image, url)
+        }
     }
+    
+    
+    /// 从相册选择图片或者视频
+    /// - Parameters:
+    ///   - options: 配置类
+    ///   - completion: 回调
+    open func selectePhotoAndVideo(with options:ImagePickerOptions, _ completion: CompleteClosure) {
+        
+        /// 是否有访问相册权限
+        let author: PHAuthorizationStatus = PHAuthorizationStatus.authorized
+        if author == .restricted || author == .denied {
+            showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
+            return
+        }
+        
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = options.allowsEditing
+        picker.mediaTypes = MediaType.all.MediaTypes
+        
+        presentController.present(picker, animated: true, completion: nil)
+        
+        self.getImage = { image, url in
+            completion?(image, url)
+        }
+    }
+}
+
+extension ImagePicker {
     
     private func getVideoThumbnail(_ url: URL) -> UIImage? {
         do {
@@ -169,7 +251,7 @@ extension ImagePicker:UIImagePickerControllerDelegate, UINavigationControllerDel
                 return
             }
             
-            if options.sourceType == .camera {
+            if picker.sourceType == .camera {
                 DispatchQueue.global().async {
                     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                 }
@@ -182,7 +264,7 @@ extension ImagePicker:UIImagePickerControllerDelegate, UINavigationControllerDel
             if let url = info[UIImagePickerController.InfoKey.mediaURL.rawValue] as? URL {
                 let pathString = url.absoluteString
                 
-                if options.sourceType == .camera {
+                if picker.sourceType == .camera {
                     if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(pathString) {
                         PHPhotoLibrary.shared().performChanges({
                             PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
