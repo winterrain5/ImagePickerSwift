@@ -1,0 +1,16 @@
+PODS:
+  - ImagePickerSwift (0.2.1)
+
+DEPENDENCIES:
+  - ImagePickerSwift (from `../`)
+
+EXTERNAL SOURCES:
+  ImagePickerSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ImagePickerSwift: 37a037bfca12e43680b9407b6845d44d77b6fe5e
+
+PODFILE CHECKSUM: 5e937975ffe292c5f4953e98bc7c16acd9fa47c2
+
+COCOAPODS: 1.10.0.rc.1
