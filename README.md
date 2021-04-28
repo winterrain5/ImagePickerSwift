@@ -9,6 +9,45 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Useage
+
+#### 选择照片
+```
+ImagePicker.show(type: .selectPhoto, with: .default) { (image, url) in
+    self.imageView.image = image
+}
+```
+#### 选择视频
+```
+ImagePicker.show(type:.selectVideo, with: .default) { (image, url) in
+    self.imageView.image = image
+    self.videoUrl = url
+}
+```
+#### 选择视频和图片
+```
+ImagePicker.show(type:.selectePhotoAndVideo, with: .default) { (image, url) in
+    self.imageView.image = image
+    self.videoUrl = url
+}
+```
+#### 拍照
+```
+let options = ImagePickerOptions()
+options.cameraDevice = .front
+ImagePicker.show(type:.takePhoto, with: .default) { (image, url) in
+    self.imageView.image = image
+    self.videoUrl = url
+}
+```
+#### 录制视频
+```
+ImagePicker.show(type:.recordVideo, with: .default) { (image, url) in
+    self.imageView.image = image
+    self.videoUrl = url
+}
+```
+
 ## Requirements
 
 ## Installation
