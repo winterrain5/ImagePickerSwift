@@ -29,48 +29,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openLibraryPickImage(_ sender: Any) {
-//        let options = ImagePickerOptions()
-//        options.pickType = .photo
-//        options.mediaTypes = .image
-//        options.sourceType = .photoLibrary
-//        options.allowsEditing = true
-//        ImagePicker.default.present(with: options) { (image, url) in
-//            self.imageView.image = image
-//            self.videoUrl = url
-//        }
-        
-        ImagePicker.default.selectPhoto(with: .default) { (image, url) in
+        ImagePicker.show(type: .selectPhoto, with: .default) { (image, url) in
             self.imageView.image = image
         }
     }
     
     @IBAction func openLibraryPickVideo(_ sender: Any) {
-//        let options = ImagePickerOptions()
-//        options.pickType = .photo
-//        options.mediaTypes = .video
-//        options.sourceType = .photoLibrary
-//        options.allowsEditing = true
-//        ImagePicker.default.present(with: options) { (image, url) in
-//            self.imageView.image = image
-//            self.videoUrl = url
-//        }
-        ImagePicker.default.selectVideo(with: .default) { (image, url) in
+
+        ImagePicker.show(type:.selectVideo, with: .default) { (image, url) in
             self.imageView.image = image
             self.videoUrl = url
         }
     }
     
     @IBAction func openLibraryPickAll(_ sender: Any) {
-//        let options = ImagePickerOptions()
-//        options.pickType = .photo
-//        options.mediaTypes = .all
-//        options.sourceType = .photoLibrary
-//        options.allowsEditing = true
-//        ImagePicker.default.present(with: options) { (image, url) in
-//            self.imageView.image = image
-//            self.videoUrl = url
-//        }
-        ImagePicker.default.selectePhotoAndVideo(with: .default) { (image, url) in
+
+        ImagePicker.show(type:.selectePhotoAndVideo, with: .default) { (image, url) in
             self.imageView.image = image
             self.videoUrl = url
         }
@@ -79,28 +53,16 @@ class ViewController: UIViewController {
     
     @IBAction func openCamera(_ sender: Any) {
         
-//        let options = ImagePickerOptions()
-//        options.pickType = .camera
-//        options.sourceType = .camera
-//        ImagePicker.default.present(with: options) { (image, url) in
-//            self.imageView.image = image
-//        }
         let options = ImagePickerOptions()
         options.cameraDevice = .front
-        ImagePicker.default.takePhoto(with: options) { (image, url) in
+        ImagePicker.show(type:.takePhoto, with: .default) { (image, url) in
             self.imageView.image = image
             self.videoUrl = url
         }
     }
     @IBAction func openVideo(_ sender: Any) {
-//        let options = ImagePickerOptions()
-//        options.pickType = .video
-//        options.sourceType = .camera
-//        ImagePicker.default.present(with: options) { (image, url) in
-//            self.imageView.image = image
-//            self.videoUrl = url
-//        }
-        ImagePicker.default.recordVideo(with: .default) { (image, url) in
+
+        ImagePicker.show(type:.recordVideo, with: .default) { (image, url) in
             self.imageView.image = image
             self.videoUrl = url
         }

@@ -5,7 +5,7 @@ import PhotosUI
 
 open class ImagePicker:NSObject{
     
-    public static let `default` = ImagePicker()
+    private static let `default` = ImagePicker()
     
     public typealias CompleteClosure = ((UIImage?, String?) -> Void)?
     
@@ -38,13 +38,34 @@ open class ImagePicker:NSObject{
         }
         return root
     }
+    
+    
+    /// 调起相册或者相机
+    /// - Parameters:
+    ///   - type: 操作类型
+    ///   - options: 配置
+    ///   - completion: 回调
+    public static func show(type:PickerType,with options:ImagePickerOptions,_ completion: CompleteClosure) {
+        switch type {
+        case .recordVideo:
+            ImagePicker.default.recordVideo(with: options, completion)
+        case .selectVideo:
+            ImagePicker.default.selectVideo(with: options, completion)
+        case .selectPhoto:
+            ImagePicker.default.selectPhoto(with: options, completion)
+        case .takePhoto:
+            ImagePicker.default.takePhoto(with: options, completion)
+        case .selectePhotoAndVideo:
+            ImagePicker.default.selectePhotoAndVideo(with: options, completion)
+        }
+    }
 
     
     /// 录制视频
     /// - Parameters:
     ///   - options: 配置类
     ///   - completion: 回调
-    open func recordVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+    private func recordVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
         /// 是否有访问相机权限
         let avAuthor: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         if avAuthor == .restricted || avAuthor == .denied {
@@ -86,7 +107,7 @@ open class ImagePicker:NSObject{
     /// - Parameters:
     ///   - options: 配置类
     ///   - completion: 回调
-    open func selectVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+    private func selectVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
         
         /// 是否有访问相册权限
         let phAuthor: PHAuthorizationStatus = PHAuthorizationStatus.authorized
@@ -115,7 +136,7 @@ open class ImagePicker:NSObject{
     /// - Parameters:
     ///   - options: 配置类
     ///   - completion: 回调
-    open func takePhoto(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+    private func takePhoto(with options:ImagePickerOptions , _ completion: CompleteClosure) {
         
         /// 是否有访问相机权限
         let avAuthor: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
@@ -151,7 +172,7 @@ open class ImagePicker:NSObject{
     /// - Parameters:
     ///   - options: 配置类
     ///   - completion: 回调
-    open func selectPhoto(with options:ImagePickerOptions, _ completion: CompleteClosure) {
+    private func selectPhoto(with options:ImagePickerOptions, _ completion: CompleteClosure) {
         
         /// 是否有访问相册权限
         let author: PHAuthorizationStatus = PHAuthorizationStatus.authorized
@@ -178,7 +199,7 @@ open class ImagePicker:NSObject{
     /// - Parameters:
     ///   - options: 配置类
     ///   - completion: 回调
-    open func selectePhotoAndVideo(with options:ImagePickerOptions, _ completion: CompleteClosure) {
+    private func selectePhotoAndVideo(with options:ImagePickerOptions, _ completion: CompleteClosure) {
         
         /// 是否有访问相册权限
         let author: PHAuthorizationStatus = PHAuthorizationStatus.authorized
