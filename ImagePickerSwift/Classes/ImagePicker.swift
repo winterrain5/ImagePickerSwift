@@ -66,6 +66,8 @@ open class ImagePicker:NSObject{
     ///   - options: 配置类
     ///   - completion: 回调
     private func recordVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+        self.options = options
+        
         /// 是否有访问相机权限
         let avAuthor: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         if avAuthor == .restricted || avAuthor == .denied {
@@ -87,8 +89,6 @@ open class ImagePicker:NSObject{
             return
         }
         
-        self.options = options
-        
         picker.sourceType = .camera
         picker.allowsEditing = options.allowsEditing
         picker.mediaTypes = MediaType.video.MediaTypes
@@ -108,6 +108,7 @@ open class ImagePicker:NSObject{
     ///   - options: 配置类
     ///   - completion: 回调
     private func selectVideo(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+        self.options = options
         
         /// 是否有访问相册权限
         let phAuthor: PHAuthorizationStatus = PHAuthorizationStatus.authorized
@@ -115,8 +116,6 @@ open class ImagePicker:NSObject{
             showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
             return
         }
-        
-        self.options = options
         
         picker.sourceType = .photoLibrary
         picker.mediaTypes = MediaType.video.MediaTypes
@@ -137,6 +136,7 @@ open class ImagePicker:NSObject{
     ///   - options: 配置类
     ///   - completion: 回调
     private func takePhoto(with options:ImagePickerOptions , _ completion: CompleteClosure) {
+        self.options = options
         
         /// 是否有访问相机权限
         let avAuthor: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
@@ -151,8 +151,6 @@ open class ImagePicker:NSObject{
             showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
             return
         }
-        
-        self.options = options
         
         picker.sourceType = .camera
         picker.allowsEditing = options.allowsEditing
@@ -173,6 +171,7 @@ open class ImagePicker:NSObject{
     ///   - options: 配置类
     ///   - completion: 回调
     private func selectPhoto(with options:ImagePickerOptions, _ completion: CompleteClosure) {
+        self.options = options
         
         /// 是否有访问相册权限
         let author: PHAuthorizationStatus = PHAuthorizationStatus.authorized
@@ -180,8 +179,6 @@ open class ImagePicker:NSObject{
             showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
             return
         }
-        
-        self.options = options
         
         picker.sourceType = .photoLibrary
         picker.allowsEditing = options.allowsEditing
@@ -200,6 +197,7 @@ open class ImagePicker:NSObject{
     ///   - options: 配置类
     ///   - completion: 回调
     private func selectePhotoAndVideo(with options:ImagePickerOptions, _ completion: CompleteClosure) {
+        self.options = options
         
         /// 是否有访问相册权限
         let author: PHAuthorizationStatus = PHAuthorizationStatus.authorized
@@ -207,8 +205,6 @@ open class ImagePicker:NSObject{
             showNoAuthorizationAlert("相册权限未开启,请在设置中启用")
             return
         }
-        
-        self.options = options
         
         picker.sourceType = .photoLibrary
         picker.allowsEditing = options.allowsEditing
